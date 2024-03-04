@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundImageSource="HomeBackground.jpg"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="Galery.Pages.PinPage">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center"  HorizontalOptions="Center">
+            <Label x:Name="HeaderLabel"
+                   FontSize="Title"
+                   TextColor="LightBlue"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"/>
+            <Entry IsPassword="True" 
+                   x:Name="Password" 
+                   MaxLength="4"
+                   Keyboard="Numeric"
+                   Margin ="20,0"
+                   FontSize="Title"
+                   Placeholder="****"
+                   PlaceholderColor="SkyBlue" 
+                   HorizontalTextAlignment="Center"
+                   TextChanged="PasswordChanging"/>
+            <Label x:Name="WarningMessageLabel"
+                   FontSize="Small"
+                   VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"/>
+            <Button x:Name="EnterButton" 
+                    IsEnabled="False"
+                    Text="Войти" 
+                    Opacity="0.8"
+                    CornerRadius="15"
+                    Clicked="WelcomeMethod"
+                    Margin="20,0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

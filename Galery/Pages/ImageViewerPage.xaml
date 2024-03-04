@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:models="clr-namespace:Galery.Models" x:DataType="models:ImgData"
+             Title="{Binding FileName}{System.Environment.NewLine}"
+             x:Class="Galery.Pages.ImageViewerPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Vertical">
+            <Image Source="{Binding FilePath}" 
+                   Aspect="AspectFill"/>
+            <Label Text="{Binding CreationDate}"
+                   TextColor="Gray"
+                   HorizontalTextAlignment="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

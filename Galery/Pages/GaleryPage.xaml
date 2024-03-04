@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Галерея"
+             x:Class="Galery.Pages.GaleryPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" BackgroundColor="White">
+            <ScrollView VerticalScrollBarVisibility="Never" Margin="0">
+                <ListView x:Name="pictures"
+                      HasUnevenRows="True"
+                      ItemsSource="{Binding imgDatas}"
+                      SeparatorVisibility="Default"
+                      RowHeight="60"
+                      CachingStrategy="RecycleElement">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell  ImageSource="{Binding FilePath}"
+                                        Text="{Binding FileName}"
+                                        Detail="{Binding CreationDate}"
+                                        TextColor="DodgerBlue"
+                                        DetailColor="Gray"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </ScrollView>
+            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                <Button Margin="10" BackgroundColor="DodgerBlue" Text="Открыть" Clicked="ViewPicrure" CornerRadius="15"/>
+                <Button Margin="10" BackgroundColor="DodgerBlue" Text="Удалить" Clicked="DeleteImage" CornerRadius="15"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
